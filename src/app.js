@@ -7,9 +7,9 @@ import forecast from './utils/forecast.js'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log(path.join(__dirname, '../public'))
+//console.log(path.join(__dirname, '../public'))
 // console.log(__filename)
-
+const port=process.env.PORT ||  3000
 const app = exprees()
 
 const viewPath = path.join(__dirname, '../templates/views')
@@ -104,6 +104,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("server is up  on port 3000")
+app.listen(port, () => {
+    console.log("server is up  on port:"+port)
 })
